@@ -23,7 +23,8 @@ $(document).ready(function() {
 	};
 
 
-	$(".topicBtn").on("click", function(){
+	// $(".topicBtn").on("click", function(){
+	$("#topicButtons").on("click", '.topicBtn', function(){	
 		var sport = $(this).attr("data-topic");
 		var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
         sport + "&api_key=dc6zaTOxFJmzC&limit=10";
