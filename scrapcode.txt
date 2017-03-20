@@ -1,0 +1,57 @@
+
+<!-- Had this initially for our HTML -->
+<section class="container-fluid topicButtons">
+	<!-- decide if we're keeping this here or putting it all in our .js folder -->
+		<button type="button" class="btn btn-default">Default</button>
+		<button class="btn btn-default" type="submit">Button</button>
+		<input class="btn btn-default" type="submit" value="Submit">
+
+	</section>
+
+	<section class="container">
+		<div class="row">
+			<!-- sports will be dumped here -->
+			<div class="col-md-8 gifhere"></div>
+
+			<!-- user to input and submit new sport -->
+			<div class="col-md-4 ">
+				<strong>Add a sport</strong>
+				<input type="text" id="topicInput" class="form-control" placeholder="Text input">
+				<button type="submit" id="addTopic" class="btn btn-primary">Submit</button>
+			</div>
+		</div>
+	</section>
+============================================================================================================
+
+// Alt. way to code part of renderButons()
+
+	$topicBtns.append($('<button>').text(topics[i]));
+	
+============================================================================================================
+
+// If you want to seperate the .on("click") and the 
+
+		// function displayTopicGif(){
+		var x = $(this).data("name");
+		var queryURL = "http://api.giphy.com/v1/gifs/search?q="+x+"&api_key=dc6zaTOxFJmzC$limit=10";
+		console.log(x);
+	// Create an AJAX call for the specific topic being clicked
+		$.ajax({
+			url: queryURL,
+			method: "GET"
+		}).done(function(response) {
+			// for (var i=0; i<response.data.length;i++){
+			// 	$("#gifHere").prepend("<img src='"+response.data[i].images.downsized.udl+)
+			// }
+
+			var topicDiv = $("gifHere");
+		
+		});
+	};
+	
+	// Add a click event listener to all elemtns with a class of "topicBtn"
+	// $(document).on("click", ".topicBtn", displayTopicGif);
+		//debug
+		// $(document).on("click", ".topicBtn", function(){
+		// 	console.log("hey it is working!");
+		// });
