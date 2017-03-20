@@ -59,6 +59,20 @@ $(document).ready(function() {
 
 			$("#gifHere").prepend(topicDiv);
 			}
+
+			$("img").on("click", function() {
+		
+
+		var state = $(this).attr("data-state")
+		
+		if (state === "still") {
+	        $(this).attr("src", $(this).attr("data-animate"));
+	        $(this).attr("data-state", "animate");
+	      } else {
+	        $(this).attr("src", $(this).attr("data-still"));
+	        $(this).attr("data-state", "still");
+      }
+	});
 		
 		});
 	});
@@ -88,19 +102,7 @@ $(document).ready(function() {
 
 	});
 
-	$(".resultGif").on("click", function() {
-		alert("You clicked a Gif!");
-
-		var state = $(this).attr("data-state")
-		
-		if (state === "still") {
-	        $(this).attr("src", $(this).attr("data-animate"));
-	        $(this).attr("data-state", "animate");
-	      } else {
-	        $(this).attr("src", $(this).attr("data-still"));
-	        $(this).attr("data-state", "still");
-      }
-	});
+	
 
 
 // close $(docment).ready
